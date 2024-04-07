@@ -11,7 +11,9 @@ import SwiftUI
 struct SkillSwapApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            MainTabView()
+                .environment(\.font, Font.custom("Segoe UI", size: 16))
         }
     }
 }
+

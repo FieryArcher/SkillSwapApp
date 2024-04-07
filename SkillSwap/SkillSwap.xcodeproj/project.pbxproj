@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		331CCE812BB141E300888494 /* FormQA.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331CCE802BB141E300888494 /* FormQA.swift */; };
+		331CCE842BB1448400888494 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331CCE832BB1448400888494 /* SettingsView.swift */; };
+		331CE1C12BBD7F14001EFD94 /* CustomImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331CE1C02BBD7F14001EFD94 /* CustomImagePicker.swift */; };
 		332EBD632B8A020400CBD655 /* SkillSwapApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 332EBD622B8A020400CBD655 /* SkillSwapApp.swift */; };
 		332EBD652B8A020400CBD655 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 332EBD642B8A020400CBD655 /* ContentView.swift */; };
 		332EBD672B8A020500CBD655 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 332EBD662B8A020500CBD655 /* Assets.xcassets */; };
@@ -14,6 +17,38 @@
 		332EBD742B8A020500CBD655 /* SkillSwapTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 332EBD732B8A020500CBD655 /* SkillSwapTests.swift */; };
 		332EBD7E2B8A020500CBD655 /* SkillSwapUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 332EBD7D2B8A020500CBD655 /* SkillSwapUITests.swift */; };
 		332EBD802B8A020500CBD655 /* SkillSwapUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 332EBD7F2B8A020500CBD655 /* SkillSwapUITestsLaunchTests.swift */; };
+		332EBD8D2B8A049C00CBD655 /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 332EBD8C2B8A049C00CBD655 /* RegistrationView.swift */; };
+		332EBD902B8A04CB00CBD655 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 332EBD8F2B8A04CB00CBD655 /* LoginView.swift */; };
+		3334A9D42BB47B480069E80E /* AboutMeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3334A9D32BB47B480069E80E /* AboutMeView.swift */; };
+		33475FE92B8B459B0009B5E9 /* WelcomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33475FE82B8B459B0009B5E9 /* WelcomeScreen.swift */; };
+		33835D7B2BA75EBC00BCD4F2 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33835D7A2BA75EBB00BCD4F2 /* CustomButton.swift */; };
+		3398B6452BB072B300F74842 /* FormSkillSwap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3398B6442BB072B300F74842 /* FormSkillSwap.swift */; };
+		3398B6472BB076B600F74842 /* FormCrowdfunding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3398B6462BB076B600F74842 /* FormCrowdfunding.swift */; };
+		33A0A73A2BBED18200F9CFA2 /* CrowdfundingModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A0A7392BBED18200F9CFA2 /* CrowdfundingModelController.swift */; };
+		33A0A73E2BBEDF2300F9CFA2 /* CrowdfundCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A0A73D2BBEDF2300F9CFA2 /* CrowdfundCell.swift */; };
+		33A88EA92BC1AF3700A217F9 /* SkillSwapCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A88EA82BC1AF3700A217F9 /* SkillSwapCell.swift */; };
+		33A9C53F2BC1283800D10E8D /* QAModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A9C53E2BC1283800D10E8D /* QAModel.swift */; };
+		33A9C5412BC128C300D10E8D /* QaModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A9C5402BC128C300D10E8D /* QaModelController.swift */; };
+		33B8513D2BC25A1A00AFEC20 /* SkillswapModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33B8513C2BC25A1A00AFEC20 /* SkillswapModelController.swift */; };
+		33D1F0FA2B9468E900A12EA9 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D1F0F92B9468E900A12EA9 /* MainTabView.swift */; };
+		33D1F0FD2B946A4100A12EA9 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D1F0FC2B946A4100A12EA9 /* ProfileView.swift */; };
+		33D1F0FF2B946A5900A12EA9 /* CreateFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D1F0FE2B946A5900A12EA9 /* CreateFormView.swift */; };
+		33D1F1012B946A6E00A12EA9 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D1F1002B946A6E00A12EA9 /* HomeView.swift */; };
+		33D1F1032B946A8500A12EA9 /* QAView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D1F1022B946A8500A12EA9 /* QAView.swift */; };
+		33D1F1052B946AAC00A12EA9 /* SkillSwapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D1F1042B946AAC00A12EA9 /* SkillSwapView.swift */; };
+		33D1F1072B94765300A12EA9 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D1F1062B94765300A12EA9 /* Person.swift */; };
+		33D1F10B2B94777400A12EA9 /* Gender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D1F10A2B94777400A12EA9 /* Gender.swift */; };
+		33D1F10E2B948A5000A12EA9 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D1F10D2B948A5000A12EA9 /* SearchBar.swift */; };
+		33D1F1102B948D9000A12EA9 /* FormCategories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D1F10F2B948D9000A12EA9 /* FormCategories.swift */; };
+		33D1F1122B948EF000A12EA9 /* SkillSwapModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D1F1112B948EF000A12EA9 /* SkillSwapModel.swift */; };
+		33D1F1142B948F6100A12EA9 /* SkillSwapCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D1F1132B948F6100A12EA9 /* SkillSwapCategory.swift */; };
+		33D1F1162B94905F00A12EA9 /* CrowdfundingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D1F1152B94905F00A12EA9 /* CrowdfundingModel.swift */; };
+		33D1F1182B9490E600A12EA9 /* CrowdfundingCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D1F1172B9490E600A12EA9 /* CrowdfundingCategory.swift */; };
+		33D448752BAD557B00A17027 /* DropDownMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D448742BAD557B00A17027 /* DropDownMenu.swift */; };
+		33D448772BAD55E100A17027 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D448762BAD55E100A17027 /* CustomTextField.swift */; };
+		33D448792BAD562C00A17027 /* CustomDatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D448782BAD562C00A17027 /* CustomDatePicker.swift */; };
+		33DA8E5E2BB46CD400B09D00 /* MySkillsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33DA8E5D2BB46CD400B09D00 /* MySkillsView.swift */; };
+		33E2E0332BC04D6A009E122D /* QACell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33E2E0322BC04D6A009E122D /* QACell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +69,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		331CCE802BB141E300888494 /* FormQA.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormQA.swift; sourceTree = "<group>"; };
+		331CCE832BB1448400888494 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		331CE1C02BBD7F14001EFD94 /* CustomImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomImagePicker.swift; sourceTree = "<group>"; };
 		332EBD5F2B8A020400CBD655 /* SkillSwap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SkillSwap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		332EBD622B8A020400CBD655 /* SkillSwapApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillSwapApp.swift; sourceTree = "<group>"; };
 		332EBD642B8A020400CBD655 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -44,6 +82,38 @@
 		332EBD792B8A020500CBD655 /* SkillSwapUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SkillSwapUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		332EBD7D2B8A020500CBD655 /* SkillSwapUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillSwapUITests.swift; sourceTree = "<group>"; };
 		332EBD7F2B8A020500CBD655 /* SkillSwapUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillSwapUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		332EBD8C2B8A049C00CBD655 /* RegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
+		332EBD8F2B8A04CB00CBD655 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		3334A9D32BB47B480069E80E /* AboutMeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutMeView.swift; sourceTree = "<group>"; };
+		33475FE82B8B459B0009B5E9 /* WelcomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeScreen.swift; sourceTree = "<group>"; };
+		33835D7A2BA75EBB00BCD4F2 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		3398B6442BB072B300F74842 /* FormSkillSwap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormSkillSwap.swift; sourceTree = "<group>"; };
+		3398B6462BB076B600F74842 /* FormCrowdfunding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormCrowdfunding.swift; sourceTree = "<group>"; };
+		33A0A7392BBED18200F9CFA2 /* CrowdfundingModelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrowdfundingModelController.swift; sourceTree = "<group>"; };
+		33A0A73D2BBEDF2300F9CFA2 /* CrowdfundCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrowdfundCell.swift; sourceTree = "<group>"; };
+		33A88EA82BC1AF3700A217F9 /* SkillSwapCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillSwapCell.swift; sourceTree = "<group>"; };
+		33A9C53E2BC1283800D10E8D /* QAModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QAModel.swift; sourceTree = "<group>"; };
+		33A9C5402BC128C300D10E8D /* QaModelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QaModelController.swift; sourceTree = "<group>"; };
+		33B8513C2BC25A1A00AFEC20 /* SkillswapModelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillswapModelController.swift; sourceTree = "<group>"; };
+		33D1F0F92B9468E900A12EA9 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
+		33D1F0FC2B946A4100A12EA9 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		33D1F0FE2B946A5900A12EA9 /* CreateFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateFormView.swift; sourceTree = "<group>"; };
+		33D1F1002B946A6E00A12EA9 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		33D1F1022B946A8500A12EA9 /* QAView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QAView.swift; sourceTree = "<group>"; };
+		33D1F1042B946AAC00A12EA9 /* SkillSwapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillSwapView.swift; sourceTree = "<group>"; };
+		33D1F1062B94765300A12EA9 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
+		33D1F10A2B94777400A12EA9 /* Gender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gender.swift; sourceTree = "<group>"; };
+		33D1F10D2B948A5000A12EA9 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
+		33D1F10F2B948D9000A12EA9 /* FormCategories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormCategories.swift; sourceTree = "<group>"; };
+		33D1F1112B948EF000A12EA9 /* SkillSwapModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillSwapModel.swift; sourceTree = "<group>"; };
+		33D1F1132B948F6100A12EA9 /* SkillSwapCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillSwapCategory.swift; sourceTree = "<group>"; };
+		33D1F1152B94905F00A12EA9 /* CrowdfundingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrowdfundingModel.swift; sourceTree = "<group>"; };
+		33D1F1172B9490E600A12EA9 /* CrowdfundingCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrowdfundingCategory.swift; sourceTree = "<group>"; };
+		33D448742BAD557B00A17027 /* DropDownMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDownMenu.swift; sourceTree = "<group>"; };
+		33D448762BAD55E100A17027 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		33D448782BAD562C00A17027 /* CustomDatePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDatePicker.swift; sourceTree = "<group>"; };
+		33DA8E5D2BB46CD400B09D00 /* MySkillsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySkillsView.swift; sourceTree = "<group>"; };
+		33E2E0322BC04D6A009E122D /* QACell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QACell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +141,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		331CCE822BB1446500888494 /* ProfileViews */ = {
+			isa = PBXGroup;
+			children = (
+				331CCE832BB1448400888494 /* SettingsView.swift */,
+				33DA8E5D2BB46CD400B09D00 /* MySkillsView.swift */,
+				3334A9D32BB47B480069E80E /* AboutMeView.swift */,
+			);
+			path = ProfileViews;
+			sourceTree = "<group>";
+		};
 		332EBD562B8A020400CBD655 = {
 			isa = PBXGroup;
 			children = (
@@ -94,6 +174,12 @@
 		332EBD612B8A020400CBD655 /* SkillSwap */ = {
 			isa = PBXGroup;
 			children = (
+				33D1F10C2B94851000A12EA9 /* ViewStructs */,
+				33D1F1092B94776B00A12EA9 /* enums */,
+				33D1F0FB2B946A1500A12EA9 /* TabViews */,
+				33A0A7382BBED16600F9CFA2 /* ModelControllers */,
+				33D1F0F72B94688A00A12EA9 /* Model */,
+				332EBD8E2B8A04A700CBD655 /* Views */,
 				332EBD622B8A020400CBD655 /* SkillSwapApp.swift */,
 				332EBD642B8A020400CBD655 /* ContentView.swift */,
 				332EBD662B8A020500CBD655 /* Assets.xcassets */,
@@ -125,6 +211,129 @@
 				332EBD7F2B8A020500CBD655 /* SkillSwapUITestsLaunchTests.swift */,
 			);
 			path = SkillSwapUITests;
+			sourceTree = "<group>";
+		};
+		332EBD8E2B8A04A700CBD655 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				33D448722BAD54C900A17027 /* Supporting */,
+				33D448712BAD54BD00A17027 /* Core */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		3398B6422BB0727000F74842 /* CoreTabs */ = {
+			isa = PBXGroup;
+			children = (
+				33D1F0FC2B946A4100A12EA9 /* ProfileView.swift */,
+				33D1F0FE2B946A5900A12EA9 /* CreateFormView.swift */,
+				33D1F1002B946A6E00A12EA9 /* HomeView.swift */,
+				33D1F1022B946A8500A12EA9 /* QAView.swift */,
+				33D1F1042B946AAC00A12EA9 /* SkillSwapView.swift */,
+			);
+			path = CoreTabs;
+			sourceTree = "<group>";
+		};
+		3398B6432BB0728600F74842 /* SupportingTabs */ = {
+			isa = PBXGroup;
+			children = (
+				3398B6442BB072B300F74842 /* FormSkillSwap.swift */,
+				3398B6462BB076B600F74842 /* FormCrowdfunding.swift */,
+				331CCE802BB141E300888494 /* FormQA.swift */,
+			);
+			path = SupportingTabs;
+			sourceTree = "<group>";
+		};
+		33A0A7382BBED16600F9CFA2 /* ModelControllers */ = {
+			isa = PBXGroup;
+			children = (
+				33A0A7392BBED18200F9CFA2 /* CrowdfundingModelController.swift */,
+				33A9C5402BC128C300D10E8D /* QaModelController.swift */,
+				33B8513C2BC25A1A00AFEC20 /* SkillswapModelController.swift */,
+			);
+			path = ModelControllers;
+			sourceTree = "<group>";
+		};
+		33A88EA22BC18D9600A217F9 /* ViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				33A0A73D2BBEDF2300F9CFA2 /* CrowdfundCell.swift */,
+				33E2E0322BC04D6A009E122D /* QACell.swift */,
+				33A88EA82BC1AF3700A217F9 /* SkillSwapCell.swift */,
+			);
+			path = ViewCells;
+			sourceTree = "<group>";
+		};
+		33A88EA32BC18DA300A217F9 /* customElements */ = {
+			isa = PBXGroup;
+			children = (
+				33835D7A2BA75EBB00BCD4F2 /* CustomButton.swift */,
+				33D448742BAD557B00A17027 /* DropDownMenu.swift */,
+				33D448762BAD55E100A17027 /* CustomTextField.swift */,
+				33D448782BAD562C00A17027 /* CustomDatePicker.swift */,
+				331CE1C02BBD7F14001EFD94 /* CustomImagePicker.swift */,
+			);
+			path = customElements;
+			sourceTree = "<group>";
+		};
+		33D1F0F72B94688A00A12EA9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				33D1F1062B94765300A12EA9 /* Person.swift */,
+				33D1F1112B948EF000A12EA9 /* SkillSwapModel.swift */,
+				33D1F1152B94905F00A12EA9 /* CrowdfundingModel.swift */,
+				33A9C53E2BC1283800D10E8D /* QAModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		33D1F0FB2B946A1500A12EA9 /* TabViews */ = {
+			isa = PBXGroup;
+			children = (
+				331CCE822BB1446500888494 /* ProfileViews */,
+				3398B6432BB0728600F74842 /* SupportingTabs */,
+				3398B6422BB0727000F74842 /* CoreTabs */,
+			);
+			path = TabViews;
+			sourceTree = "<group>";
+		};
+		33D1F1092B94776B00A12EA9 /* enums */ = {
+			isa = PBXGroup;
+			children = (
+				33D1F10A2B94777400A12EA9 /* Gender.swift */,
+				33D1F10F2B948D9000A12EA9 /* FormCategories.swift */,
+				33D1F1132B948F6100A12EA9 /* SkillSwapCategory.swift */,
+				33D1F1172B9490E600A12EA9 /* CrowdfundingCategory.swift */,
+			);
+			path = enums;
+			sourceTree = "<group>";
+		};
+		33D1F10C2B94851000A12EA9 /* ViewStructs */ = {
+			isa = PBXGroup;
+			children = (
+				33D1F10D2B948A5000A12EA9 /* SearchBar.swift */,
+			);
+			path = ViewStructs;
+			sourceTree = "<group>";
+		};
+		33D448712BAD54BD00A17027 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				332EBD8C2B8A049C00CBD655 /* RegistrationView.swift */,
+				332EBD8F2B8A04CB00CBD655 /* LoginView.swift */,
+				33475FE82B8B459B0009B5E9 /* WelcomeScreen.swift */,
+				33D1F0F92B9468E900A12EA9 /* MainTabView.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		33D448722BAD54C900A17027 /* Supporting */ = {
+			isa = PBXGroup;
+			children = (
+				33A88EA32BC18DA300A217F9 /* customElements */,
+				33A88EA22BC18D9600A217F9 /* ViewCells */,
+			);
+			path = Supporting;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,8 +466,43 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				33D1F1142B948F6100A12EA9 /* SkillSwapCategory.swift in Sources */,
+				33A0A73A2BBED18200F9CFA2 /* CrowdfundingModelController.swift in Sources */,
+				33D1F1012B946A6E00A12EA9 /* HomeView.swift in Sources */,
+				332EBD8D2B8A049C00CBD655 /* RegistrationView.swift in Sources */,
 				332EBD652B8A020400CBD655 /* ContentView.swift in Sources */,
+				33835D7B2BA75EBC00BCD4F2 /* CustomButton.swift in Sources */,
+				33D1F0FF2B946A5900A12EA9 /* CreateFormView.swift in Sources */,
+				33D1F1032B946A8500A12EA9 /* QAView.swift in Sources */,
+				33475FE92B8B459B0009B5E9 /* WelcomeScreen.swift in Sources */,
+				33A9C5412BC128C300D10E8D /* QaModelController.swift in Sources */,
+				33DA8E5E2BB46CD400B09D00 /* MySkillsView.swift in Sources */,
+				33D1F1102B948D9000A12EA9 /* FormCategories.swift in Sources */,
+				33D1F1072B94765300A12EA9 /* Person.swift in Sources */,
+				33D1F10E2B948A5000A12EA9 /* SearchBar.swift in Sources */,
+				3398B6452BB072B300F74842 /* FormSkillSwap.swift in Sources */,
+				33D448752BAD557B00A17027 /* DropDownMenu.swift in Sources */,
+				33A9C53F2BC1283800D10E8D /* QAModel.swift in Sources */,
+				331CE1C12BBD7F14001EFD94 /* CustomImagePicker.swift in Sources */,
+				33B8513D2BC25A1A00AFEC20 /* SkillswapModelController.swift in Sources */,
+				331CCE812BB141E300888494 /* FormQA.swift in Sources */,
+				33D448772BAD55E100A17027 /* CustomTextField.swift in Sources */,
+				33D1F1052B946AAC00A12EA9 /* SkillSwapView.swift in Sources */,
+				33D1F1122B948EF000A12EA9 /* SkillSwapModel.swift in Sources */,
+				33D1F1182B9490E600A12EA9 /* CrowdfundingCategory.swift in Sources */,
+				3334A9D42BB47B480069E80E /* AboutMeView.swift in Sources */,
+				33D1F10B2B94777400A12EA9 /* Gender.swift in Sources */,
+				33D1F1162B94905F00A12EA9 /* CrowdfundingModel.swift in Sources */,
+				33D448792BAD562C00A17027 /* CustomDatePicker.swift in Sources */,
+				331CCE842BB1448400888494 /* SettingsView.swift in Sources */,
+				33A0A73E2BBEDF2300F9CFA2 /* CrowdfundCell.swift in Sources */,
+				332EBD902B8A04CB00CBD655 /* LoginView.swift in Sources */,
 				332EBD632B8A020400CBD655 /* SkillSwapApp.swift in Sources */,
+				33D1F0FD2B946A4100A12EA9 /* ProfileView.swift in Sources */,
+				33A88EA92BC1AF3700A217F9 /* SkillSwapCell.swift in Sources */,
+				33D1F0FA2B9468E900A12EA9 /* MainTabView.swift in Sources */,
+				3398B6472BB076B600F74842 /* FormCrowdfunding.swift in Sources */,
+				33E2E0332BC04D6A009E122D /* QACell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
