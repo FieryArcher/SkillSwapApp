@@ -10,23 +10,38 @@ import SwiftUI
 struct QAView: View {
     @State var textFieldTxt: String = ""
 
-    var qaModels = QaModelController.questions
+//    var qaModels = QaModelController.questions
+    @State private var questionsModel: [Post] = []
     
     var body: some View {
         VStack {
-            Text("Q/A")
-                .font(.system(size: 18, weight: .bold))
             SearchBar(searchTxt: $textFieldTxt)
                 .padding(.horizontal)
             ScrollView(showsIndicators: false) {
-                ForEach(qaModels) {
+                ForEach(questionsModel, id: \.id) {
                     element in
                     QACell(model: element)
                 }
             }
             Spacer()
         }
+        .onAppear{
+            fetchPosts()
+        }
     }
+    
+    //MARK: - Fetching date into array of elements
+    func fetchPosts() {
+        NetworkService.shared.fetchQuestions(endpoint: Endpoint.questions) { result in
+            switch result {
+            case .success(let posts):
+                questionsModel = posts.data
+            case .failure(let error):
+                print(String(describing: error))
+            }
+        }
+    }
+    
 }
 
 #Preview {

@@ -13,38 +13,41 @@ struct MainTabView: View {
     @State var searchTxt: String = ""
     
     var body: some View {
-        NavigationView{
-            VStack(spacing: 0){
-                TabView {
-                    HomeView()
-                        .tabItem {
-                            Image(systemName: "house")
-                            Text("Home")
-                        }
-                    SkillSwapView()
-                        .tabItem {
-                            Image(systemName: "arrow.up.left.arrow.down.right.circle")
-                            Text("Exchange")
-                        }
-                    CreateFormView()
-                        .tabItem {
-                            Image(systemName: "plus.circle")
-                            Text("Add")
-                        }
-                    QAView()
-                        .tabItem {
-                            Image(systemName: "list.bullet.circle")
-                            Text("Q/A")
-                        }
-                    ProfileView()
-                        .tabItem {
-                            Image(systemName: "person")
-                            Text("Profile")
-                        }
-                }
-                .edgesIgnoringSafeArea(showTabBar ? .bottom : [])
+        VStack(spacing: 0){
+            TabView {
+                HomeView()
+                    .tabItem {
+                        Image(systemName: "house")
+                        Text("Home")
+                    }
+                    .navigationTitle("Home")
+                SkillSwapView()
+                    .tabItem {
+                        Image(systemName: "arrow.up.left.arrow.down.right.circle")
+                        Text("Exchange")
+                    }
+                    .navigationTitle("Skill Swap")
+                CreateFormView()
+                    .tabItem {
+                        Image(systemName: "plus.circle")
+                        Text("Add")
+                    }
+                QAView()
+                    .tabItem {
+                        Image(systemName: "list.bullet.circle")
+                        Text("Q/A")
+                    }
+                ProfileView()
+                    .tabItem {
+                        Image(systemName: "person")
+                        Text("Profile")
+                    }
             }
+            .navigationBarTitleDisplayMode(.inline)
+            .navigationBarBackButtonHidden(true)
+            .edgesIgnoringSafeArea(showTabBar ? .bottom : [])
         }
+        
     }
 }
 

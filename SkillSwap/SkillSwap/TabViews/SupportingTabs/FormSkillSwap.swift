@@ -13,6 +13,7 @@ struct FormSkillSwap: View {
     // MARK: Variables
     @State var skillHolder: String = ""
     @State var descriptionHolder: String = ""
+    @State var priceHolder: Int = 0
     @State var selectedDate = Date()
     @State private var selectedCategory = SkillSwapCategory.learing
 
@@ -22,11 +23,26 @@ struct FormSkillSwap: View {
     @State var isExchnage: Bool = false
     @State var model: SkillSwapModel?
     
+    
+    @State var showLoad = false
+    @State var showAlert = false
+    
+    @State var alertStatus = false
+    @State var alertMessage = ""
+    
+    @State var serverResponse: Response?
+    
     var body: some View {
-        skillSwap
+        ZStack{
+            skillSwap
+            if showLoad {
+                LoadingView()
+            }
+            if showAlert {
+                CustomAlert(isSuccess: alertStatus, message: alertMessage)
+            }
+        }
     }
-    
-    
     // MARK: -Skill Swap
     var skillSwap: some View{
         VStack{
@@ -45,26 +61,52 @@ struct FormSkillSwap: View {
             CustomTextField(placeholder: "Type description", textHolder: $descriptionHolder)
             
             HStack{
-                Text("Category")
+                Text("Price")
                 Spacer()
             }
             .padding(.horizontal)
-            DropDownMenu(selectedCategory: $selectedCategory)
-            
-            datePicker
+            CustomTextFieldNumeric(placeholder: "Type number", textHolder: $priceHolder)
             
             photoPicker
             
-            checkBox
-            
-            CustomButton(title: "Upload")
-                .padding(30)
-                .onTapGesture {
-                    model = SkillSwapModel(title: skillHolder, descripton: descriptionHolder, category: selectedCategory, endDate: selectedDate, cost: 1000, isExchange: true)
-                    print(model)
+            CustomButton(title: "Upload") {
+                guard let uiImage: UIImage = selectedImage else { return }
+                self.showLoad = true
+                if !skillHolder.isEmpty, !descriptionHolder.isEmpty, !priceHolder.words.isEmpty {
+                    let model = SkillSwapCreate(title: skillHolder, content: descriptionHolder, price: priceHolder)
+                    NetworkService.shared.uploadPost(model, with: uiImage) { result in
+                        switch result {
+                        case .success(let success):
+                            DispatchQueue.main.async {
+                                self.showLoad = false
+                                self.showAlert = true
+                                self.alertStatus = success.success
+                                self.alertMessage = "Post successfully created"
+                            }
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                                self.showAlert = false
+                            }
+                        case .failure(let failure):
+                            DispatchQueue.main.async {
+                                self.showLoad = false
+                                self.showAlert = true
+                                self.alertStatus = false
+                                self.alertMessage = "Pleasse fill all required lines correctly"
+                            }
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                                self.showAlert = false
+                            }
+                        }
+                    }
+                } else {
+                    print("Something went wrong, please fill mandatory lines")
                 }
-            
-            
+                skillHolder = ""
+                descriptionHolder = ""
+                priceHolder = 0
+                selectedImage = nil
+            }
+            .padding(30)
             Spacer()
         }
         .font(.system(size: 16, weight: .bold))
@@ -80,7 +122,6 @@ struct FormSkillSwap: View {
                     .padding(.horizontal)
                 Spacer()
             }
-            
             CustomDatePicker(selectedDate: $selectedDate, title: "From", systemImage: "calendar")
         }
     }

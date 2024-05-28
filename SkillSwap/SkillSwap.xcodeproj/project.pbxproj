@@ -10,6 +10,8 @@
 		331CCE812BB141E300888494 /* FormQA.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331CCE802BB141E300888494 /* FormQA.swift */; };
 		331CCE842BB1448400888494 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331CCE832BB1448400888494 /* SettingsView.swift */; };
 		331CE1C12BBD7F14001EFD94 /* CustomImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331CE1C02BBD7F14001EFD94 /* CustomImagePicker.swift */; };
+		331E8B7B2BE9E644004368D2 /* CreateTaskManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331E8B7A2BE9E644004368D2 /* CreateTaskManager.swift */; };
+		331FB27B2BDF5FAC00129C74 /* MyProjectsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331FB27A2BDF5FAC00129C74 /* MyProjectsView.swift */; };
 		332EBD632B8A020400CBD655 /* SkillSwapApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 332EBD622B8A020400CBD655 /* SkillSwapApp.swift */; };
 		332EBD652B8A020400CBD655 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 332EBD642B8A020400CBD655 /* ContentView.swift */; };
 		332EBD672B8A020500CBD655 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 332EBD662B8A020500CBD655 /* Assets.xcassets */; };
@@ -20,12 +22,19 @@
 		332EBD8D2B8A049C00CBD655 /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 332EBD8C2B8A049C00CBD655 /* RegistrationView.swift */; };
 		332EBD902B8A04CB00CBD655 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 332EBD8F2B8A04CB00CBD655 /* LoginView.swift */; };
 		3334A9D42BB47B480069E80E /* AboutMeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3334A9D32BB47B480069E80E /* AboutMeView.swift */; };
+		333835F62BE7793F00742636 /* Media.swift in Sources */ = {isa = PBXBuildFile; fileRef = 333835F52BE7793F00742636 /* Media.swift */; };
+		333A10EA2BEBE8D60024F295 /* PostsMainCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 333A10E92BEBE8D60024F295 /* PostsMainCell.swift */; };
 		33475FE92B8B459B0009B5E9 /* WelcomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33475FE82B8B459B0009B5E9 /* WelcomeScreen.swift */; };
+		334E881D2BC6D7450066A822 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 334E881C2BC6D7450066A822 /* NetworkService.swift */; };
+		335F39242BCBD63900B45890 /* AccountType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335F39232BCBD63900B45890 /* AccountType.swift */; };
+		3380E90A2BE4AA320024C414 /* MyQuestionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3380E9092BE4AA320024C414 /* MyQuestionsView.swift */; };
+		3380E90D2BE54B500024C414 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 3380E90C2BE54B500024C414 /* Alamofire */; };
 		33835D7B2BA75EBC00BCD4F2 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33835D7A2BA75EBB00BCD4F2 /* CustomButton.swift */; };
 		3398B6452BB072B300F74842 /* FormSkillSwap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3398B6442BB072B300F74842 /* FormSkillSwap.swift */; };
 		3398B6472BB076B600F74842 /* FormCrowdfunding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3398B6462BB076B600F74842 /* FormCrowdfunding.swift */; };
 		33A0A73A2BBED18200F9CFA2 /* CrowdfundingModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A0A7392BBED18200F9CFA2 /* CrowdfundingModelController.swift */; };
 		33A0A73E2BBEDF2300F9CFA2 /* CrowdfundCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A0A73D2BBEDF2300F9CFA2 /* CrowdfundCell.swift */; };
+		33A5CCE72BE61E0300081795 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = 33A5CCE62BE61E0300081795 /* Moya */; };
 		33A88EA92BC1AF3700A217F9 /* SkillSwapCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A88EA82BC1AF3700A217F9 /* SkillSwapCell.swift */; };
 		33A9C53F2BC1283800D10E8D /* QAModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A9C53E2BC1283800D10E8D /* QAModel.swift */; };
 		33A9C5412BC128C300D10E8D /* QaModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A9C5402BC128C300D10E8D /* QaModelController.swift */; };
@@ -36,7 +45,7 @@
 		33D1F1012B946A6E00A12EA9 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D1F1002B946A6E00A12EA9 /* HomeView.swift */; };
 		33D1F1032B946A8500A12EA9 /* QAView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D1F1022B946A8500A12EA9 /* QAView.swift */; };
 		33D1F1052B946AAC00A12EA9 /* SkillSwapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D1F1042B946AAC00A12EA9 /* SkillSwapView.swift */; };
-		33D1F1072B94765300A12EA9 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D1F1062B94765300A12EA9 /* Person.swift */; };
+		33D1F1072B94765300A12EA9 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D1F1062B94765300A12EA9 /* User.swift */; };
 		33D1F10B2B94777400A12EA9 /* Gender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D1F10A2B94777400A12EA9 /* Gender.swift */; };
 		33D1F10E2B948A5000A12EA9 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D1F10D2B948A5000A12EA9 /* SearchBar.swift */; };
 		33D1F1102B948D9000A12EA9 /* FormCategories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D1F10F2B948D9000A12EA9 /* FormCategories.swift */; };
@@ -49,6 +58,9 @@
 		33D448792BAD562C00A17027 /* CustomDatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D448782BAD562C00A17027 /* CustomDatePicker.swift */; };
 		33DA8E5E2BB46CD400B09D00 /* MySkillsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33DA8E5D2BB46CD400B09D00 /* MySkillsView.swift */; };
 		33E2E0332BC04D6A009E122D /* QACell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33E2E0322BC04D6A009E122D /* QACell.swift */; };
+		33F21FC72BDC029400D3D746 /* TestAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F21FC62BDC029400D3D746 /* TestAlert.swift */; };
+		33F950602BD1705400A06330 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F9505F2BD1705400A06330 /* AuthService.swift */; };
+		33F950622BD170F900A06330 /* URLManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F950612BD170F900A06330 /* URLManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +84,8 @@
 		331CCE802BB141E300888494 /* FormQA.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormQA.swift; sourceTree = "<group>"; };
 		331CCE832BB1448400888494 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		331CE1C02BBD7F14001EFD94 /* CustomImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomImagePicker.swift; sourceTree = "<group>"; };
+		331E8B7A2BE9E644004368D2 /* CreateTaskManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTaskManager.swift; sourceTree = "<group>"; };
+		331FB27A2BDF5FAC00129C74 /* MyProjectsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProjectsView.swift; sourceTree = "<group>"; };
 		332EBD5F2B8A020400CBD655 /* SkillSwap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SkillSwap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		332EBD622B8A020400CBD655 /* SkillSwapApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillSwapApp.swift; sourceTree = "<group>"; };
 		332EBD642B8A020400CBD655 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -85,7 +99,12 @@
 		332EBD8C2B8A049C00CBD655 /* RegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
 		332EBD8F2B8A04CB00CBD655 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		3334A9D32BB47B480069E80E /* AboutMeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutMeView.swift; sourceTree = "<group>"; };
+		333835F52BE7793F00742636 /* Media.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Media.swift; sourceTree = "<group>"; };
+		333A10E92BEBE8D60024F295 /* PostsMainCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsMainCell.swift; sourceTree = "<group>"; };
 		33475FE82B8B459B0009B5E9 /* WelcomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeScreen.swift; sourceTree = "<group>"; };
+		334E881C2BC6D7450066A822 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		335F39232BCBD63900B45890 /* AccountType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountType.swift; sourceTree = "<group>"; };
+		3380E9092BE4AA320024C414 /* MyQuestionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyQuestionsView.swift; sourceTree = "<group>"; };
 		33835D7A2BA75EBB00BCD4F2 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		3398B6442BB072B300F74842 /* FormSkillSwap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormSkillSwap.swift; sourceTree = "<group>"; };
 		3398B6462BB076B600F74842 /* FormCrowdfunding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormCrowdfunding.swift; sourceTree = "<group>"; };
@@ -101,7 +120,7 @@
 		33D1F1002B946A6E00A12EA9 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		33D1F1022B946A8500A12EA9 /* QAView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QAView.swift; sourceTree = "<group>"; };
 		33D1F1042B946AAC00A12EA9 /* SkillSwapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillSwapView.swift; sourceTree = "<group>"; };
-		33D1F1062B94765300A12EA9 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
+		33D1F1062B94765300A12EA9 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		33D1F10A2B94777400A12EA9 /* Gender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gender.swift; sourceTree = "<group>"; };
 		33D1F10D2B948A5000A12EA9 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 		33D1F10F2B948D9000A12EA9 /* FormCategories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormCategories.swift; sourceTree = "<group>"; };
@@ -114,6 +133,9 @@
 		33D448782BAD562C00A17027 /* CustomDatePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDatePicker.swift; sourceTree = "<group>"; };
 		33DA8E5D2BB46CD400B09D00 /* MySkillsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySkillsView.swift; sourceTree = "<group>"; };
 		33E2E0322BC04D6A009E122D /* QACell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QACell.swift; sourceTree = "<group>"; };
+		33F21FC62BDC029400D3D746 /* TestAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestAlert.swift; sourceTree = "<group>"; };
+		33F9505F2BD1705400A06330 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		33F950612BD170F900A06330 /* URLManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +143,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				33A5CCE72BE61E0300081795 /* Moya in Frameworks */,
+				3380E90D2BE54B500024C414 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -147,6 +171,8 @@
 				331CCE832BB1448400888494 /* SettingsView.swift */,
 				33DA8E5D2BB46CD400B09D00 /* MySkillsView.swift */,
 				3334A9D32BB47B480069E80E /* AboutMeView.swift */,
+				331FB27A2BDF5FAC00129C74 /* MyProjectsView.swift */,
+				3380E9092BE4AA320024C414 /* MyQuestionsView.swift */,
 			);
 			path = ProfileViews;
 			sourceTree = "<group>";
@@ -174,6 +200,7 @@
 		332EBD612B8A020400CBD655 /* SkillSwap */ = {
 			isa = PBXGroup;
 			children = (
+				33F9505E2BD1348800A06330 /* Service */,
 				33D1F10C2B94851000A12EA9 /* ViewStructs */,
 				33D1F1092B94776B00A12EA9 /* enums */,
 				33D1F0FB2B946A1500A12EA9 /* TabViews */,
@@ -260,6 +287,7 @@
 				33A0A73D2BBEDF2300F9CFA2 /* CrowdfundCell.swift */,
 				33E2E0322BC04D6A009E122D /* QACell.swift */,
 				33A88EA82BC1AF3700A217F9 /* SkillSwapCell.swift */,
+				333A10E92BEBE8D60024F295 /* PostsMainCell.swift */,
 			);
 			path = ViewCells;
 			sourceTree = "<group>";
@@ -279,7 +307,7 @@
 		33D1F0F72B94688A00A12EA9 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				33D1F1062B94765300A12EA9 /* Person.swift */,
+				33D1F1062B94765300A12EA9 /* User.swift */,
 				33D1F1112B948EF000A12EA9 /* SkillSwapModel.swift */,
 				33D1F1152B94905F00A12EA9 /* CrowdfundingModel.swift */,
 				33A9C53E2BC1283800D10E8D /* QAModel.swift */,
@@ -304,6 +332,7 @@
 				33D1F10F2B948D9000A12EA9 /* FormCategories.swift */,
 				33D1F1132B948F6100A12EA9 /* SkillSwapCategory.swift */,
 				33D1F1172B9490E600A12EA9 /* CrowdfundingCategory.swift */,
+				335F39232BCBD63900B45890 /* AccountType.swift */,
 			);
 			path = enums;
 			sourceTree = "<group>";
@@ -312,6 +341,7 @@
 			isa = PBXGroup;
 			children = (
 				33D1F10D2B948A5000A12EA9 /* SearchBar.swift */,
+				33F21FC62BDC029400D3D746 /* TestAlert.swift */,
 			);
 			path = ViewStructs;
 			sourceTree = "<group>";
@@ -336,6 +366,18 @@
 			path = Supporting;
 			sourceTree = "<group>";
 		};
+		33F9505E2BD1348800A06330 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				334E881C2BC6D7450066A822 /* NetworkService.swift */,
+				33F9505F2BD1705400A06330 /* AuthService.swift */,
+				33F950612BD170F900A06330 /* URLManager.swift */,
+				333835F52BE7793F00742636 /* Media.swift */,
+				331E8B7A2BE9E644004368D2 /* CreateTaskManager.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -352,6 +394,10 @@
 			dependencies = (
 			);
 			name = SkillSwap;
+			packageProductDependencies = (
+				3380E90C2BE54B500024C414 /* Alamofire */,
+				33A5CCE62BE61E0300081795 /* Moya */,
+			);
 			productName = SkillSwap;
 			productReference = 332EBD5F2B8A020400CBD655 /* SkillSwap.app */;
 			productType = "com.apple.product-type.application";
@@ -424,6 +470,10 @@
 				Base,
 			);
 			mainGroup = 332EBD562B8A020400CBD655;
+			packageReferences = (
+				3380E90B2BE54B500024C414 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				33A5CCE52BE61E0300081795 /* XCRemoteSwiftPackageReference "Moya" */,
+			);
 			productRefGroup = 332EBD602B8A020400CBD655 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -471,23 +521,29 @@
 				33D1F1012B946A6E00A12EA9 /* HomeView.swift in Sources */,
 				332EBD8D2B8A049C00CBD655 /* RegistrationView.swift in Sources */,
 				332EBD652B8A020400CBD655 /* ContentView.swift in Sources */,
+				333A10EA2BEBE8D60024F295 /* PostsMainCell.swift in Sources */,
 				33835D7B2BA75EBC00BCD4F2 /* CustomButton.swift in Sources */,
+				333835F62BE7793F00742636 /* Media.swift in Sources */,
 				33D1F0FF2B946A5900A12EA9 /* CreateFormView.swift in Sources */,
+				33F950602BD1705400A06330 /* AuthService.swift in Sources */,
+				331FB27B2BDF5FAC00129C74 /* MyProjectsView.swift in Sources */,
 				33D1F1032B946A8500A12EA9 /* QAView.swift in Sources */,
 				33475FE92B8B459B0009B5E9 /* WelcomeScreen.swift in Sources */,
 				33A9C5412BC128C300D10E8D /* QaModelController.swift in Sources */,
 				33DA8E5E2BB46CD400B09D00 /* MySkillsView.swift in Sources */,
 				33D1F1102B948D9000A12EA9 /* FormCategories.swift in Sources */,
-				33D1F1072B94765300A12EA9 /* Person.swift in Sources */,
+				33D1F1072B94765300A12EA9 /* User.swift in Sources */,
 				33D1F10E2B948A5000A12EA9 /* SearchBar.swift in Sources */,
 				3398B6452BB072B300F74842 /* FormSkillSwap.swift in Sources */,
 				33D448752BAD557B00A17027 /* DropDownMenu.swift in Sources */,
+				335F39242BCBD63900B45890 /* AccountType.swift in Sources */,
 				33A9C53F2BC1283800D10E8D /* QAModel.swift in Sources */,
 				331CE1C12BBD7F14001EFD94 /* CustomImagePicker.swift in Sources */,
 				33B8513D2BC25A1A00AFEC20 /* SkillswapModelController.swift in Sources */,
 				331CCE812BB141E300888494 /* FormQA.swift in Sources */,
 				33D448772BAD55E100A17027 /* CustomTextField.swift in Sources */,
 				33D1F1052B946AAC00A12EA9 /* SkillSwapView.swift in Sources */,
+				33F21FC72BDC029400D3D746 /* TestAlert.swift in Sources */,
 				33D1F1122B948EF000A12EA9 /* SkillSwapModel.swift in Sources */,
 				33D1F1182B9490E600A12EA9 /* CrowdfundingCategory.swift in Sources */,
 				3334A9D42BB47B480069E80E /* AboutMeView.swift in Sources */,
@@ -500,8 +556,12 @@
 				332EBD632B8A020400CBD655 /* SkillSwapApp.swift in Sources */,
 				33D1F0FD2B946A4100A12EA9 /* ProfileView.swift in Sources */,
 				33A88EA92BC1AF3700A217F9 /* SkillSwapCell.swift in Sources */,
+				334E881D2BC6D7450066A822 /* NetworkService.swift in Sources */,
 				33D1F0FA2B9468E900A12EA9 /* MainTabView.swift in Sources */,
+				3380E90A2BE4AA320024C414 /* MyQuestionsView.swift in Sources */,
 				3398B6472BB076B600F74842 /* FormCrowdfunding.swift in Sources */,
+				33F950622BD170F900A06330 /* URLManager.swift in Sources */,
+				331E8B7B2BE9E644004368D2 /* CreateTaskManager.swift in Sources */,
 				33E2E0332BC04D6A009E122D /* QACell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -832,6 +892,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		3380E90B2BE54B500024C414 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.9.1;
+			};
+		};
+		33A5CCE52BE61E0300081795 /* XCRemoteSwiftPackageReference "Moya" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Moya/Moya.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 15.0.3;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		3380E90C2BE54B500024C414 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3380E90B2BE54B500024C414 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		33A5CCE62BE61E0300081795 /* Moya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 33A5CCE52BE61E0300081795 /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = Moya;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 332EBD572B8A020400CBD655 /* Project object */;
 }

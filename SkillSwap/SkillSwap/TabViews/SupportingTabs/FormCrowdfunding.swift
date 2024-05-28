@@ -11,61 +11,119 @@ import PhotosUI
 struct FormCrowdfunding: View {
     
     //MARK: -Variables
-    @State var projectHolder: String = ""
+    @State var title: String = ""
+    @State var content: String = ""
+    @State var amountMoney: String = ""
+    @State var planningMoney: String = ""
     
     @State var selectedCrownfundingCategory: CrowdfundingCategory = .materialThing
     
     
+    @State private var resultModel: CrowdfundResponseData?
+    
     @State var selectedItemImage: PhotosPickerItem?
     @State var selectedImage: UIImage?
+    
+    //MARK: - ALERTS
+    @State var showLoad = false
+    @State var showAlert = false
+    
+    @State var alertStatus = false
+    @State var alertMessage = ""
+    
     //MARK: -Main block
     var body: some View {
-        crowdFunding
+        ZStack{
+            crowdFunding
+            if showLoad {
+                LoadingView()
+            }
+            if showAlert {
+                CustomAlert(isSuccess: alertStatus, message: alertMessage)
+            }
+            
+        }
     }
     
     var crowdFunding: some View{
         
         VStack{
             HStack{
-                Text("Project")
+                Text("Project title")
                 Spacer()
             }
             .padding(.horizontal)
-            CustomTextField(placeholder: "Title", textHolder: $projectHolder)
+            CustomTextField(placeholder: "Title", textHolder: $title)
             
             HStack{
                 Text("Description")
                 Spacer()
             }
             .padding(.horizontal)
-            CustomTextField(placeholder: "Type something", textHolder: $projectHolder)
+            CustomTextField(placeholder: "Description of the project", textHolder: $content)
             
             HStack{
-                Text("About")
+                Text("Earned Money")
                 Spacer()
             }
             .padding(.horizontal)
-            CustomTextField(placeholder: "Key words", textHolder: $projectHolder)
+            CustomTextField(imageName: "moneyIcon", placeholder: "Now you have", textHolder: $amountMoney)
             
             HStack{
-                Text("Category")
+                Text("Planned Money")
                 Spacer()
             }
             .padding(.horizontal)
-            DropDownMenuCrowdfunding(selectedCategory: $selectedCrownfundingCategory)
-            
-            
-            HStack{
-                Text("Money")
-                Spacer()
-            }
-            .padding(.horizontal)
-            CustomTextField(imageName: "moneyIcon",placeholder: "Key words", textHolder: $projectHolder)
+            CustomTextField(imageName: "moneyIcon",placeholder: "Planned one", textHolder: $planningMoney)
             
             photoPicker
             
-            CustomButton(title: "Upload")
-                .padding(30)
+            CustomButton(title: "Upload"){
+                
+                guard let uiImage = selectedImage else { return }
+                
+                self.showLoad = true
+                
+                guard !title.isEmpty, !content.isEmpty, !amountMoney.isEmpty, !planningMoney.isEmpty else {
+                    return
+                }
+                
+                let model = CrowdfundPostData(title: title, content: content, amountMoney: amountMoney, plannedMoney: planningMoney)
+                
+                NetworkService.shared.uploadFund(model, with: uiImage) { result in
+                    switch result {
+                    case .success(let success):
+                        DispatchQueue.main.async {
+                            self.showLoad = false
+                            self.showAlert = true
+                            self.alertStatus = success.success
+                            self.alertMessage = "Crowdfund successfully created"
+                        }
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                            self.showAlert = false
+                        }
+                    case .failure(let failure):
+                        DispatchQueue.main.async {
+                            self.showLoad = false
+                            self.showAlert = true
+                            self.alertStatus = false
+                            self.alertMessage = "Unfortunaly crowdfund was not created"
+                        }
+                        
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                            self.showAlert = false
+                        }
+                    }
+                }
+                
+                title = ""
+                content = ""
+                amountMoney = ""
+                planningMoney = ""
+                selectedImage = nil
+                
+            }
+            .padding(30)
             
             Spacer()
             

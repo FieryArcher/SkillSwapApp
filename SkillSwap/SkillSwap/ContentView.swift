@@ -8,14 +8,20 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @EnvironmentObject var accountManager: AuthService
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        NavigationStack {
+            if accountManager.isLoggedIn {
+                MainTabView()
+                    .navigationTitle("Skill swap app")
+//                    .toolbar(Visibility.hidden, for: .tabBar)
+            } else {
+                LoginView()
+            }
         }
-        .padding()
+        
     }
 }
 

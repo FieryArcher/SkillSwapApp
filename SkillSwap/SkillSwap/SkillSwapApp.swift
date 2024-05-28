@@ -9,10 +9,16 @@ import SwiftUI
 
 @main
 struct SkillSwapApp: App {
+    
+    @StateObject var authService = AuthService.shared
+    
     var body: some Scene {
         WindowGroup {
-            MainTabView()
-                .environment(\.font, Font.custom("Segoe UI", size: 16))
+            NavigationView{
+                ContentView()
+                    .environmentObject(authService)
+                    .environment(\.font, Font.custom("Segoe UI", size: 16))
+            }
         }
     }
 }

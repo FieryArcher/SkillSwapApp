@@ -11,6 +11,7 @@ import PhotosUI
 struct CreateFormView: View {
     
     @State var selectedCategory: FormCategories = .skillSwap
+    @StateObject var createTask = CreateTaskManager()
     
     init() {
         UISegmentedControl.appearance().selectedSegmentTintColor = UIColor(named: "primaryColor")
@@ -19,23 +20,29 @@ struct CreateFormView: View {
     
     // MARK: - Main body
     var body: some View {
-        VStack {
-            Text("New")
-                .fontWeight(.bold)
-                .foregroundColor(.primary)
-            .padding()
-            
-            Picker("Chose category", selection: $selectedCategory) {
-                ForEach(FormCategories.allCases, id: \.self){
-                    Text($0.rawValue)
+        ZStack{
+            VStack {
+                
+                Picker("Chose category", selection: $selectedCategory) {
+                    ForEach(FormCategories.allCases, id: \.self){
+                        Text($0.rawValue)
+                    }
+                }
+                .pickerStyle(.palette)
+                .padding()
+                
+                ScrollView {
+                    ChosenFormView(selectedFormSide: selectedCategory)
                 }
             }
-            .pickerStyle(.palette)
-            .padding()
-            
-            ScrollView {
-                ChosenFormView(selectedFormSide: selectedCategory)
+            if createTask.showLoad {
+                LoadingView()
             }
+            
+            if createTask.showAlert {
+                CustomAlert(isSuccess: createTask.alertStatus, message: createTask.alertMessage)
+            }
+        
         }
     }
     
@@ -44,5 +51,3 @@ struct CreateFormView: View {
 #Preview {
     CreateFormView()
 }
-
-

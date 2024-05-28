@@ -7,62 +7,95 @@
 
 import SwiftUI
 
+
 struct RegistrationView: View {
+    
+    @State var accountType: AccountType = .user
     @State var selectedGender: Gender = .female
     
     @State var nameTextField: String = ""
     @State var lastNameTextField: String = ""
     
     @State var emailAddress: String = ""
-    @State var contactNumber: String = ""
+    @State var contactNumber: Int?
     
     @State var password: String = ""
     @State var confirmPassword: String = ""
     
     @State var isAgreeTerms: Bool = false
     
+    //MARK: alerts
+    
+    @State private var showAlert = false
+    @State private var showLoading = false
+    @State var alertSuccess: Bool = false
+    @State var alertMessage: String = ""
+    
+    @State private var redirectToAnotherPage = false
+    
+    @State private var alertShown = false
+
+    
     var body: some View {
-        VStack{
-            HStack{
-                Image(systemName: "chevron.left")
-                    .font(.system(size: 25))
-                    .foregroundColor(Color("primaryColor"))
-                    .padding()
+        
+        ZStack {
+            ScrollView{
+                upperSide
+                downSide
                 Spacer()
-                Text("Registration")
-                    .foregroundColor(Color("primaryColor"))
-                    .padding(.trailing, 40)
-                //            Spacer()
-                loginButton
-                    .padding(.trailing, 10)
             }
+            if showLoading {
+                LoadingView()
+            }
+            if showAlert{
+                CustomAlert(isSuccess: alertSuccess, message: alertMessage)
+            }
+            
+            NavigationLink(destination: LoginView(), isActive: $redirectToAnotherPage) {
+                EmptyView()
+            }
+            
+        }
+        .navigationTitle("Registration")
+        .foregroundColor(Color("primaryColor"))
+    }
+    
+    var upperSide: some View {
+        VStack{
+            DropDownMenuAccountType(selectedCategory: $accountType).padding(.top, 20)
             selectGender.padding()
-            Divider()
-                .padding(.horizontal)
-            
-            
+            Divider().padding(.horizontal)
+
             HStack{
                 FormElement(textFieldBinding: $nameTextField, placeholder: "name".capitalized)
-                
                 FormElement(textFieldBinding: $lastNameTextField, placeholder: "Lastname".capitalized)
-                
             }
             .padding(.vertical, 10)
 
             HStack{
-                FormElement(textFieldBinding: $emailAddress, placeholder: "Email address".capitalized, isOptional: false)
-                
-                FormElement(textFieldBinding: $contactNumber, placeholder: "Contact number".capitalized, isOptional: false)
+                FormElement(textFieldBinding: $emailAddress, placeholder: "Email address".capitalized)
+                    .autocapitalization(.none)
+                FormElementNumeric(numericField: $contactNumber, placeholder: "Contact Number")
             }
             .padding(.vertical, 10)
 
-            HStack{
-                FormElement(textFieldBinding: $password, placeholder: "password".capitalized)
-                
-                FormElement(textFieldBinding: $confirmPassword, placeholder: "confirm password".capitalized)
+            VStack{
+                HStack {
+                    Text("Enter password")
+                        .textCase(.uppercase)
+                        .font(.system(size: 10))
+                        .padding(.horizontal)
+                        .padding(.vertical, 4)
+                    Spacer()
+                }
+                SecureTextField(text: $password)
             }
-            .padding(.vertical, 10)
-            
+            .padding(8)
+        }
+    }
+    
+    var downSide: some View{
+        VStack{
             HStack {
                 Toggle(isOn: $isAgreeTerms) {
                     Text("I'm acquainted with terms and policy")
@@ -75,20 +108,64 @@ struct RegistrationView: View {
             }
             .padding(.horizontal)
             
-            CostomButtonText(title: "Register")
-                .padding()
+            //MARK: -Network Service calling...
+            CostomButtonText(title: "Register"){
+                self.showLoading = true
+                print("Name is - \(nameTextField)")
+                
+                if !nameTextField.isEmpty, !lastNameTextField.isEmpty,
+                   !emailAddress.isEmpty,
+                   !(password.count < 8) {
+                    let user = User(emailAddress: emailAddress,
+                                    gender: selectedGender.rawValue,
+                                    contactNumber: contactNumber ?? 89,
+                                    name: nameTextField,
+                                    lastName: lastNameTextField,
+                                    course: "",
+                                    password: password,
+                                    accountType: accountType.rawValue)
+                    if user.validate() {
+                        print("Данные пользователя валидны. Можно отправлять на сервер.")
+                    } else {
+                        print("Данные пользователя не соответствуют требованиям бекенда.")
+                    }
+                    
+                    Task{
+                        AuthService.shared.registerUser(user: user) { result in
+                            let response: Response = result
+                            print("This is our MESSAGE from server \(response.message)")
+                            alertSuccess = response.success
+                            alertMessage = response.message
+                            print(response.success)
+                        }
+                    }
+                    
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                        if !self.alertShown {
+                            self.showAlert = true
+                            self.showLoading = false
+                            self.alertShown = true
+                            
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 1){
+                                self.showAlert = false
+                                self.redirectToAnotherPage = true
+                            }
+                        }
+                    }
+                    print(user)
+                }
+            }
+            .padding()
             
-            Spacer()
             HStack{
                 Spacer()
                 Text("Terms and policy")
+                    .font(.system(size: 12, weight: .regular))
                     .padding(.horizontal, 20)
                     .bold()
             }
         }
-        .foregroundColor(Color("primaryColor"))
     }
-    
     
     var loginButton: some View{
         ZStack{
@@ -129,6 +206,7 @@ struct RegistrationView: View {
                                 }
                             ))
                             .labelsHidden()
+                            .tint(Color("primaryColor"))
                             .padding(.horizontal, 20)
                         }
                     }
@@ -140,10 +218,10 @@ struct RegistrationView: View {
     
 }
 
-struct FormElement: View{
-    @Binding var textFieldBinding: String
+
+struct FormElementNumeric: View{
+    @Binding var numericField: Int?
     var placeholder: String
-    var isOptional: Bool = true
     
     var body: some View{
         VStack{
@@ -151,19 +229,49 @@ struct FormElement: View{
                 Text("Enter \(placeholder)")
                     .textCase(.uppercase)
                     .font(.system(size: 10))
-                .padding()
+                    .padding(.horizontal)
+                    .padding(.vertical, 4)
                 Spacer()
             }
             ZStack {
                 RoundedRectangle(cornerRadius: 10)
-                    .foregroundColor(Color("buttonBG"))
+                    .foregroundColor(Color("announceBG"))
+                    .padding(5)
+                HStack {
+                    TextField(value: $numericField, format: .number) {
+                        Text(placeholder)
+                    }
+                }
+                .padding()
+            }
+            Divider()
+                .foregroundColor(.red)
+                .padding(.horizontal)
+        }
+    }
+}
+
+struct FormElement: View{
+    @Binding var textFieldBinding: String
+    var placeholder: String
+    
+    var body: some View{
+        VStack{
+            HStack {
+                Text("Enter \(placeholder)")
+                    .textCase(.uppercase)
+                    .font(.system(size: 10))
+                    .padding(.horizontal)
+                    .padding(.vertical, 4)
+                Spacer()
+            }
+            ZStack {
+                RoundedRectangle(cornerRadius: 10)
+                    .foregroundColor(Color("announceBG"))
                     .padding(5)
                 HStack {
                     TextField(text: $textFieldBinding) {
                         Text(placeholder)
-                    }
-                    if isOptional{
-                        Image(systemName: "wand.and.stars")
                     }
                 }
                 .padding()
@@ -191,15 +299,20 @@ struct iOSCheckboxToggleStyle: ToggleStyle {
 
 struct CostomButtonText: View {
     var title: String
+    var action: () -> ()
     var body: some View {
-        Text(title)
-            .textCase(.uppercase)
-            .font(.system(size: 16, weight: .semibold))
-            .foregroundColor(Color("primaryColor"))
-            .padding()
-            .frame(maxWidth: .infinity)
-            .background(Color("buttonBG"))
-            .clipShape(RoundedRectangle(cornerRadius: 30))
+        Button(action: {
+            action()
+        }, label: {
+            Text(title)
+                .textCase(.uppercase)
+                .font(.system(size: 16, weight: .semibold))
+                .foregroundColor(.white)
+                .padding()
+                .frame(maxWidth: .infinity)
+                .background(Color("primaryColor"))
+                .clipShape(RoundedRectangle(cornerRadius: 30))
+        })
     }
 }
 

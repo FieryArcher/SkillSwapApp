@@ -5,26 +5,39 @@
 //  Created by Nurlan Darzhanov on 05.04.2024.
 //
 
+//1 \(model.authorName) \(model.authorSurname)
+//2 \(model.createdAt)
+//3 \(model.description)
+
+
 import SwiftUI
 
 struct QACell: View {
     
+    var model: Post
     @State private var likeCount = 0
     @State private var rateUpCount = 0
     @State private var rateDownCount = 0
     
-    var model: QAModel
-    
     var body: some View {
         VStack(alignment: .leading, spacing: 10){
             HStack {
-                Image("profile")
-                    .resizable()
-                    .frame(width: 24, height: 24)
+                
+                AsyncImage(url: URL(string: "somthing")) { image in
+                    image
+                        .resizable()
+                        .frame(width: 24, height: 24)
+                } placeholder: {
+                    // Placeholder view while loading
+                    Image("profile")
+                        .resizable()
+                        .frame(width: 24, height: 24)
+                }
+                
                 Text("\(model.authorName) \(model.authorSurname)")
                     .font(.system(size: 14, weight: .semibold))
                 Spacer()
-                Text("\(model.date)")
+                Text("\(model.createdAt)")
                     .font(.system(size: 12, weight: .medium))
             }
             
@@ -39,10 +52,24 @@ struct QACell: View {
                 .font(.system(size: 15, weight: .regular))
                 .lineLimit(1)
             
-            Image("qaImage")
-                .resizable()
-                .scaledToFit()
+            AsyncImage(url: URL(string: "\(model.photo)")) { image in
+                image
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+            } placeholder: {
+                // Placeholder view while loading
+                ProgressView()
+            }
+            
+//            Image("qaImage")
+//                .resizable()
+//                .scaledToFit()
+            
             buttons
+                .onAppear{
+                    rateUpCount = model.likes
+                    rateDownCount = model.dislikes
+                }
         }
         .padding()
         .background(
@@ -131,12 +158,10 @@ struct QACell: View {
     }
 }
 
-#Preview {
-    QACell(model:
-        QAModel(title: "How to make A?",
-                description: "I struggled with this problem and tried to solve one week straight, can someone help?",
-                photo: "image",
-                date: "21.12.2012",
-                authorName: "Ginger",
-                authorSurname: "Gentleman"))
-}
+//#Preview {
+//    QACell(model: Post(id: 1, title: "test", description: "test", status: true, photo: URL(string: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fletsenhance.io%2F&psig=AOvVaw2yPXW5DLH8QFsqxOFTED8Z&ust=1712845929194000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCKiDnLvut4UDFQAAAAAdAAAAABAJ")!,
+//                       createdAt: "todays date",
+//                       authorName: "admin",
+//                       authorSurname: "admin",
+//                      categories: [Category(name: "hi", pivot: Pivot(questionId: 1, categoryId: 1))]))
+//}

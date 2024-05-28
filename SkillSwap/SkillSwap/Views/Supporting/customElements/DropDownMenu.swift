@@ -109,6 +109,48 @@ struct DropDownMenuCrowdfunding: View{
         }
     }
 }
+
+
+struct DropDownMenuAccountType: View{
+    @State private var isMenuVisible = false
+    @Binding var selectedCategory: AccountType
+    
+    var body: some View{
+        VStack{
+            Button(action: {
+                isMenuVisible.toggle()
+            }) {
+                HStack{
+                    Text(selectedCategory.rawValue.capitalized)
+                        .font(.system(size: 16, weight: .medium))
+                    Spacer()
+                    Image(systemName: isMenuVisible ? "chevron.up" : "chevron.down")
+                }
+                .foregroundColor(Color("primaryColor"))
+                .padding()
+            }
+            .frame(width: .infinity, height: 38)
+            .background(Color("announceBG"))
+            .cornerRadius(8)
+            .padding(.horizontal)
+            
+            if isMenuVisible {
+                VStack(spacing: 4) {
+                    ForEach(AccountType.allCases, id: \.self) { category in
+                        DropdownMenuItem(text: category.rawValue) {
+                            self.selectedCategory = category
+                            self.isMenuVisible.toggle()
+                        }
+                    }
+                }
+                .background(Color("announceBG"))
+                .cornerRadius(8)
+                .padding()
+            }
+        }
+    }
+}
+
 #Preview {
     DropDownMenu(selectedCategory: .constant(.learing))
 }

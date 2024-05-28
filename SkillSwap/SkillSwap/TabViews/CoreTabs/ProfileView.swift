@@ -10,12 +10,11 @@ import SwiftUI
 struct ProfileView: View {
     
     @State var showAlert: Bool = false
+    private var name = AuthService.shared.authData?.name
+    private var email = AuthService.shared.authData?.email
     
     var body: some View {
-        
         VStack{
-            Text("Profile")
-                .font(.system(size: 18, weight: .bold))
             profileImageGroup
             profileAnounsments
             list
@@ -39,14 +38,14 @@ struct ProfileView: View {
     
     var profileImageGroup: some View{
         HStack(spacing: 10){
-            Image("profileimage2")
+            Image("profile")
                 .resizable()
                 .frame(width: 62, height: 62)
                 .clipShape(Circle())
             VStack(alignment: .leading, spacing: 10){
-                Text("Artur Conan Doil")
+                Text("\(name!)")
                     .font(.system(size: 20, weight: .semibold))
-                Text("+7 707 726 75 75")
+                Text("\(email!)")
                     .font(.system(size: 16, weight: .light))
                     .foregroundColor(.gray)
             }
@@ -59,7 +58,6 @@ struct ProfileView: View {
     
     var list: some View{
             List{
-                
                 NavigationLink {
                     AboutMeView()
                         .navigationTitle("About me")
@@ -67,7 +65,6 @@ struct ProfileView: View {
                 } label: {
                     ProfileListElement(iconTitle: "person", title: "About me")
                 }
-
                 
                 NavigationLink {
                     MySkillsView()
@@ -76,14 +73,24 @@ struct ProfileView: View {
                 } label: {
                     ProfileListElement(iconTitle: "person.badge.shield.checkmark", title: "My skills")
                 }
-
+            
+                NavigationLink {
+                    MyQuestionsView()
+                        .navigationTitle("My Projects")
+                        .toolbar(Visibility.hidden, for: .tabBar)
+                } label: {
+                    ProfileListElement(iconTitle: "questionmark.bubble", title: "My questions")
+                }
                 
-                ProfileListElement(iconTitle: "newspaper", title: "My projects")
-                
-//                ProfileListElement(iconTitle: "ellipsis.message", title: "Chats")
+                NavigationLink {
+                    MyProjectsView()
+                        .navigationTitle("My Projects")
+                        .toolbar(Visibility.hidden, for: .tabBar)
+                } label: {
+                    ProfileListElement(iconTitle: "newspaper", title: "My projects")
+                }
                 
                 ProfileListElement(iconTitle: "beats.headphones", title: "Contact us")
-                
                 
                 NavigationLink(
                     destination: SettingsView()
@@ -95,12 +102,12 @@ struct ProfileView: View {
                 
                 ProfileListElement(iconTitle: "rectangle.portrait.and.arrow.right", title: "Log out")
                     .alert(isPresented: $showAlert) {
-                        Alert(title: Text("Вы уверены, что хотите выйти?"),
-                              primaryButton: .destructive(Text("Выйти")) {
-                            // Действие при нажатии кнопки "Выйти"
+                        Alert(title: Text("Are you sure you want to come out?"),
+                              primaryButton: .destructive(Text("Quit")) {
+                            AuthService.shared.logout()
                             print("User logged out")
                         },
-                              secondaryButton: .cancel(Text("Отмена")))
+                              secondaryButton: .cancel(Text("Cancel")))
                     }
                     .onTapGesture {
                         showAlert.toggle()
@@ -110,7 +117,6 @@ struct ProfileView: View {
             .padding(.vertical)
         
     }
-    
     
 }
 

@@ -12,9 +12,7 @@ struct CrowdfundCell: View {
     var crowdfund: CrowdfundingModel
     
     var body: some View {
-        ZStack{
-            RoundedRectangle(cornerRadius: 16)
-                .foregroundColor(Color("announceBG"))
+//        ZStack{
             
             VStack(alignment: .leading, spacing: 5){
                 Text(crowdfund.title)
@@ -28,8 +26,18 @@ struct CrowdfundCell: View {
                         .font(.system(size: 12, weight: .regular))
                         .foregroundColor(.green)
                 
+                AsyncImage(url: URL(string: "\(crowdfund.photo)")) { image in
+                    image
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                } placeholder: {
+                    // Placeholder view while loading
+                    ProgressView()
+                }
                 
-                CustomButton(title: "Fund", height: 33, size: 14)
+                CustomButton(title: "Fund", height: 33, size: 14){
+                    printHello()
+                }
                 
                 HStack{
                     Spacer()
@@ -38,13 +46,17 @@ struct CrowdfundCell: View {
                         .foregroundColor(.secondary)
                 }
             }
-            .padding(.horizontal)
-        }
-        .padding(.horizontal)
-        .frame(height: 160)
+            .padding()
+            .background{
+                RoundedRectangle(cornerRadius: 16)
+                    .foregroundColor(Color("announceBG"))
+            }
+//        }
+//        .padding(.horizontal)
+//        .frame(height: 160)
     }
 }
 
 #Preview {
-    CrowdfundCell(crowdfund: CrowdfundingModel(title: "title", photo: "hit", createdDate: Date(), earnedMoney: 3000, plannedMoney: 300000, content: "hello", category: .materialThing))
+    CrowdfundCell(crowdfund: CrowdfundingModel(id: 1, title: "hit", photo: "hello", content: "hello", earnedMoney: 300000, plannedMoney: 3000, createdDate: "7th of september", categories: [CrowdfundingModel.Category(name: "name", pivot: CrowdfundingModel.PivotSkillFund(skillFundId: 1, categoryId: 1))]))
 }

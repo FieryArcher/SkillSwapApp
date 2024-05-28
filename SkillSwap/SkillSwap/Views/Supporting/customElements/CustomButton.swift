@@ -11,11 +11,10 @@ struct CustomButton: View {
     var title: String
     var height: CGFloat = 50
     var size: CGFloat = 18
+    var action: () -> Void
     
     var body: some View {
-        Button {
-            print("Button pressed")
-        } label: {
+        Button (action: action) {
             Text(title)
                 .font(.system(size: size, weight: .bold))
                 .foregroundColor(.white)
@@ -30,6 +29,12 @@ struct CustomButton: View {
     }
 }
 
+public func printHello() {
+    print("Hello!")
+}
+
 #Preview {
-    CustomButton(title: /*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+    CustomButton(title: "Hello, World!") {
+        print("hello baby")
+    }
 }

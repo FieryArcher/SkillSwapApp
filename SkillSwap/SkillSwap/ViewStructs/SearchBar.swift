@@ -32,7 +32,6 @@ struct SearchBar: View {
                     .background(Color("announceBG"))
                     .clipShape(Circle())
             })
-            
         }
     }
 }
