@@ -51,9 +51,6 @@ struct CrowdfundCell: View {
                 RoundedRectangle(cornerRadius: 16)
                     .foregroundColor(Color("announceBG"))
             }
-//        }
-//        .padding(.horizontal)
-//        .frame(height: 160)
     }
 }
 

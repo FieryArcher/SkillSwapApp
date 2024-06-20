@@ -57,13 +57,8 @@ struct QACell: View {
                     .resizable()
                     .aspectRatio(contentMode: .fit)
             } placeholder: {
-                // Placeholder view while loading
                 ProgressView()
             }
-            
-//            Image("qaImage")
-//                .resizable()
-//                .scaledToFit()
             
             buttons
                 .onAppear{
@@ -157,11 +152,3 @@ struct QACell: View {
         .foregroundColor(Color("primaryColor"))
     }
 }
-
-//#Preview {
-//    QACell(model: Post(id: 1, title: "test", description: "test", status: true, photo: URL(string: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fletsenhance.io%2F&psig=AOvVaw2yPXW5DLH8QFsqxOFTED8Z&ust=1712845929194000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCKiDnLvut4UDFQAAAAAdAAAAABAJ")!,
-//                       createdAt: "todays date",
-//                       authorName: "admin",
-//                       authorSurname: "admin",
-//                      categories: [Category(name: "hi", pivot: Pivot(questionId: 1, categoryId: 1))]))
-//}

@@ -43,9 +43,9 @@ struct ProfileView: View {
                 .frame(width: 62, height: 62)
                 .clipShape(Circle())
             VStack(alignment: .leading, spacing: 10){
-                Text("\(name!)")
+                Text("\(name ?? "James Bond")")
                     .font(.system(size: 20, weight: .semibold))
-                Text("\(email!)")
+                Text("\(email ?? "bond@mail.com")")
                     .font(.system(size: 16, weight: .light))
                     .foregroundColor(.gray)
             }

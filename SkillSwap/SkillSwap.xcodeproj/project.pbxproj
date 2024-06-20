@@ -27,6 +27,7 @@
 		33475FE92B8B459B0009B5E9 /* WelcomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33475FE82B8B459B0009B5E9 /* WelcomeScreen.swift */; };
 		334E881D2BC6D7450066A822 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 334E881C2BC6D7450066A822 /* NetworkService.swift */; };
 		335F39242BCBD63900B45890 /* AccountType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335F39232BCBD63900B45890 /* AccountType.swift */; };
+		336A53AC2C05C91100252383 /* RespondSkillSwap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 336A53AB2C05C91100252383 /* RespondSkillSwap.swift */; };
 		3380E90A2BE4AA320024C414 /* MyQuestionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3380E9092BE4AA320024C414 /* MyQuestionsView.swift */; };
 		3380E90D2BE54B500024C414 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 3380E90C2BE54B500024C414 /* Alamofire */; };
 		33835D7B2BA75EBC00BCD4F2 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33835D7A2BA75EBB00BCD4F2 /* CustomButton.swift */; };
@@ -104,6 +105,7 @@
 		33475FE82B8B459B0009B5E9 /* WelcomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeScreen.swift; sourceTree = "<group>"; };
 		334E881C2BC6D7450066A822 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		335F39232BCBD63900B45890 /* AccountType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountType.swift; sourceTree = "<group>"; };
+		336A53AB2C05C91100252383 /* RespondSkillSwap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RespondSkillSwap.swift; sourceTree = "<group>"; };
 		3380E9092BE4AA320024C414 /* MyQuestionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyQuestionsView.swift; sourceTree = "<group>"; };
 		33835D7A2BA75EBB00BCD4F2 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		3398B6442BB072B300F74842 /* FormSkillSwap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormSkillSwap.swift; sourceTree = "<group>"; };
@@ -249,6 +251,14 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		336A53AA2C05C0BE00252383 /* ViewCellController */ = {
+			isa = PBXGroup;
+			children = (
+				336A53AB2C05C91100252383 /* RespondSkillSwap.swift */,
+			);
+			path = ViewCellController;
+			sourceTree = "<group>";
+		};
 		3398B6422BB0727000F74842 /* CoreTabs */ = {
 			isa = PBXGroup;
 			children = (
@@ -360,6 +370,7 @@
 		33D448722BAD54C900A17027 /* Supporting */ = {
 			isa = PBXGroup;
 			children = (
+				336A53AA2C05C0BE00252383 /* ViewCellController */,
 				33A88EA32BC18DA300A217F9 /* customElements */,
 				33A88EA22BC18D9600A217F9 /* ViewCells */,
 			);
@@ -554,6 +565,7 @@
 				33A0A73E2BBEDF2300F9CFA2 /* CrowdfundCell.swift in Sources */,
 				332EBD902B8A04CB00CBD655 /* LoginView.swift in Sources */,
 				332EBD632B8A020400CBD655 /* SkillSwapApp.swift in Sources */,
+				336A53AC2C05C91100252383 /* RespondSkillSwap.swift in Sources */,
 				33D1F0FD2B946A4100A12EA9 /* ProfileView.swift in Sources */,
 				33A88EA92BC1AF3700A217F9 /* SkillSwapCell.swift in Sources */,
 				334E881D2BC6D7450066A822 /* NetworkService.swift in Sources */,

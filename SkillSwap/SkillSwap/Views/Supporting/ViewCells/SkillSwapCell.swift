@@ -70,20 +70,6 @@ struct SkillSwapCell: View {
                     // MARK: - Action for delete
                     Button(action: {
                         dataStore.removeItem(at: model.id)
-//                        NetworkService.shared.deleteSkill(endpoint: .posts, id: model.id) { result in
-//                            switch result {
-//                            case .success(let data):
-//                                print("Before data changed ---- \(taskManager.showAlert)")
-//                                taskManager.taskCompleted(status: data.success, message: data.message)
-//                                taskManager.objectWillChange.send() // Принудительное обновление
-//                                print("OUR DATA FROM DELETED ACTION: - \(data)")
-//                                print("Is data changed? ---- \(taskManager.showAlert)")
-//                            case .failure(let error):
-//                                taskManager.taskCompleted(status: false, message: "Server is not answering, please try again later")
-//                                print("Something went wrong on fetching error on DELETE button: \(error)")
-//                            }
-//                            
-//                        }
                         print("delete tapped")
                     }, label: {
                         Text("Delete")
